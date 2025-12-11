@@ -24,7 +24,14 @@ const PostGig = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
+        // body: JSON.stringify({
+        //   title: 'Fix React Component Bug',
+        //   description: 'Describe what needs to be done, expected outcomes, and any requirements...',
+        //   paymentAmount: 100,
+        //   workerAddress: 'GB7X7'
+        // })
       })
+
 
       if (response.ok) {
         setSubmitted(true)
@@ -70,6 +77,7 @@ const PostGig = () => {
                 </div>
               </div>
             </div>
+            
           )}
 
           {/* Warning Banner */}
@@ -165,8 +173,8 @@ const PostGig = () => {
               <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
                 <p className="text-xs text-indigo-300 font-semibold mb-2">Your Wallet Address (Client)</p>
                 <p className="text-xs text-gray-300 font-mono truncate">
-                  {localStorage.getItem('publicKey')}
-                </p>
+                  {localStorage.getItem('publicKey')} 
+                                  </p>
               </div>
             )}
 

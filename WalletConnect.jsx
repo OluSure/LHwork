@@ -38,6 +38,7 @@ const WalletConnect = () => {
       } else if (attempts >= maxAttempts) {
         clearInterval(interval)
         setLoading(false)
+        setLastError('Unable to detect Freighter extension')
       }
     }, 200)
 
@@ -59,6 +60,8 @@ const WalletConnect = () => {
         console.error('Not connected to Freighter', e)
         setLastError(String(e))
         setConnected(false)
+        setPublicKey('')
+        setReputation(0)
       }
     } else {
       setFreighterInstalled(false)

@@ -13,9 +13,11 @@ const MyGigs = () => {
         const data = await response.json()
         setMyGigs(data)
         setLoading(false)
+        console.log('My gigs:', data)
       } catch (error) {
         console.error('Error fetching my gigs:', error)
         setLoading(false)
+
       }
     }
 
@@ -30,6 +32,7 @@ const MyGigs = () => {
       })
       // Refresh gigs list
       window.location.reload()
+      console.log('Gig completed:', gigId)
     } catch (error) {
       console.error('Error completing gig:', error)
     }
